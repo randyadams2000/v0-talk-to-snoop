@@ -8,11 +8,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">PM</span>
+              <span className="text-primary-foreground font-bold text-sm">SD</span>
             </div>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground">PiersMorgan.AI</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground">Snoop Dogg.ai</h1>
 
           <div className="w-8 h-8" />
         </div>
@@ -31,8 +31,8 @@ export default function Home() {
 
         <div className="text-center mt-4 md:mt-8 max-w-2xl px-4 hidden md:block">
           <p className="text-muted-foreground text-base md:text-lg lg:text-xl text-pretty">
-            Have a direct, unfiltered conversation with the legendary broadcaster.
-            Ask him anything — if you dare.
+            Have a laid-back conversation with the legendary rapper and icon.
+            Ask him anything — fo shizzle.
           </p>
         </div>
 

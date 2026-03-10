@@ -12,18 +12,18 @@ export function AnamAgentEmbed() {
     return (
       <div className="relative w-full h-full">
         <iframe
-          src="https://lab.anam.ai/frame/IZm2DwRvJF9804U96UvcH"
+          src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
           width="720"
           height="480"
           allow="microphone"
           className="w-full h-full border-0"
-          title="Talk to Piers Morgan AI"
+          title="Talk to Snoop Dogg AI"
         />
         <div className="fixed inset-0 bg-white flex items-start justify-center pt-4 sm:pt-8 pb-4 sm:pb-8 z-50 overflow-y-auto">
           <div className="bg-white rounded-lg p-4 sm:p-6 max-w-md mx-4 shadow-xl border border-border max-h-[calc(100vh-50px)] sm:max-h-none">
             <h2 className="text-xl font-semibold text-foreground mb-4">Terms and Privacy</h2>
             <p className="text-muted-foreground text-sm mb-4">
-              PiersMorgan.ai is a product of Talk2Me, Inc. and is based on Piers{"'"} persona, knowledge and voice, as well as AI, to generate the responses to your questions.
+              SnoopDogg.ai is a product of Talk2Me, Inc. and is based on Snoop{"'"}s persona, knowledge and voice, as well as AI, to generate the responses to your questions.
             </p>
             <p className="text-muted-foreground text-sm mb-4">
               Please review and accept our terms before continuing. This call may be recorded and shared with service providers for quality assurance and service improvement purposes.
@@ -57,12 +57,12 @@ export function AnamAgentEmbed() {
 
   return (
     <iframe
-      src="https://lab.anam.ai/frame/IZm2DwRvJF9804U96UvcH"
+      src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
       width="720"
       height="480"
       allow="microphone"
       className="w-full h-full border-0"
-      title="Talk to Piers Morgan AI"
+      title="Talk to Snoop Dogg AI"
     />
   )
 }
