@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Talk to Piers Morgan',
-  description: 'Have a conversation with Piers Morgan AI - unfiltered, direct, and always entertaining.',
+  title: 'Snoop Dogg.ai',
+  description: 'Have a conversation with Snoop Dogg AI - laid back, iconic, and always keeping it real.',
   generator: 'v0.app',
   icons: {
     icon: [
