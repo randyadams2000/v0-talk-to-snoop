@@ -12,7 +12,7 @@ export function AnamAgentEmbed() {
     return (
       <div className="relative w-full h-full">
         <iframe
-          src="https://lab.anam.ai/share/DXfe9o_Ukn6YvFAqbyhkX"
+          src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
           width="720"
           height="480"
           allow="microphone"
@@ -57,7 +57,7 @@ export function AnamAgentEmbed() {
 
   return (
     <iframe
-      src="https://lab.anam.ai/share/DXfe9o_Ukn6YvFAqbyhkX"
+      src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
       width="720"
       height="480"
       allow="microphone"
