@@ -1,24 +1,32 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import Script from "next/script"
+
+// Declare the custom element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'anam-agent': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+        'agent-id'?: string;
+      }, HTMLElement>;
+    }
+  }
+}
 
 export function AnamAgentEmbed() {
   const [accepted, setAccepted] = useState(false)
   const [agreed, setAgreed] = useState(false)
+  const [scriptLoaded, setScriptLoaded] = useState(false)
 
   if (!accepted) {
     return (
       <div className="relative w-full h-full">
-        <iframe
-          src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
-          width="720"
-          height="480"
-          allow="microphone"
-          className="w-full h-full border-0"
-          title="Talk to Snoop Dogg AI"
-        />
+        <div className="w-full h-full bg-muted flex items-center justify-center">
+          <p className="text-muted-foreground">Accept terms to start conversation</p>
+        </div>
         <div className="fixed inset-0 bg-white flex items-start justify-center pt-4 sm:pt-8 pb-4 sm:pb-8 z-50 overflow-y-auto">
           <div className="bg-white rounded-lg p-4 sm:p-6 max-w-md mx-4 shadow-xl border border-border max-h-[calc(100vh-50px)] sm:max-h-none">
             <h2 className="text-xl font-semibold text-foreground mb-4">Terms and Privacy</h2>
@@ -56,13 +64,13 @@ export function AnamAgentEmbed() {
   }
 
   return (
-    <iframe
-      src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
-      width="720"
-      height="480"
-      allow="microphone"
-      className="w-full h-full border-0"
-      title="Talk to Snoop Dogg AI"
-    />
+    <div className="w-full h-full">
+      <Script 
+        src="https://unpkg.com/@anam-ai/agent-widget" 
+        strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
+      />
+      <anam-agent agent-id="a985cf1f-50a0-4894-8f27-da2df2d913bf" />
+    </div>
   )
 }
