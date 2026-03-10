@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Mic, MicOff } from "lucide-react"
@@ -9,20 +9,14 @@ export function AnamAgentEmbed() {
   const [accepted, setAccepted] = useState(false)
   const [agreed, setAgreed] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
+  const [iframeKey, setIframeKey] = useState(0)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
-  const toggleMute = () => {
-    const newMutedState = !isMuted
-    setIsMuted(newMutedState)
-    
-    // Send message to iframe to mute/unmute
-    if (iframeRef.current?.contentWindow) {
-      iframeRef.current.contentWindow.postMessage(
-        { type: "toggleMute", muted: newMutedState },
-        "*"
-      )
-    }
-  }
+  const toggleMute = useCallback(() => {
+    setIsMuted(prev => !prev)
+    // Force iframe to reload with new permissions
+    setIframeKey(prev => prev + 1)
+  }, [])
 
   if (!accepted) {
     return (
@@ -74,11 +68,12 @@ export function AnamAgentEmbed() {
   return (
     <div className="relative w-full h-full">
       <iframe
+        key={iframeKey}
         ref={iframeRef}
         src="https://lab.anam.ai/frame/L8ySWEhuszqHzveQwSAtt"
         width="720"
         height="480"
-        allow="microphone"
+        allow={isMuted ? "" : "microphone"}
         className="w-full h-full border-0"
         title="Talk to Snoop Dogg AI"
       />
