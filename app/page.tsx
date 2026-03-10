@@ -1,4 +1,5 @@
 import { AnamAgentEmbed } from "@/components/anam-agent-embed"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -7,9 +8,13 @@ export default function Home() {
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">SD</span>
-            </div>
+            <Image
+              src="/images/talk2me-logo.png"
+              alt="Talk2Me"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+            />
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-foreground">Snoop Dogg.ai</h1>
